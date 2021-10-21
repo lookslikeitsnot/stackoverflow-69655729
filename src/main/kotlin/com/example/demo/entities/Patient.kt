@@ -7,12 +7,10 @@ import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.OneToMany
-import javax.persistence.Table
 
 @Entity
-@Table(name = "patient")
-class Patient(
+data class Patient(
+        @Id @GeneratedValue(strategy = GenerationType.SEQUENCE) val patientId: Long = 0,
         @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.LAZY, mappedBy = "patient")
-        val diseases: List<Disease>? = null,
-        @Id @GeneratedValue(strategy = GenerationType.SEQUENCE) val patientId: Long? = null
+        val diseases: List<Disease>? = null
 )
