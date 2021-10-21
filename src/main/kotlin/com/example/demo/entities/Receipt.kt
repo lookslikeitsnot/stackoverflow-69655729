@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne
 
 @Entity
 data class Receipt(
-        @Id @GeneratedValue(strategy = GenerationType.SEQUENCE) val receiptId: Long = 0,
+        @Id @GeneratedValue(strategy = GenerationType.AUTO) val receiptId: Long = 0,
         val details: String,
         val delivery_Date: LocalDate = LocalDate.now(),
         val status: Int = 0,

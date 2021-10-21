@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull
 
 @Entity
 data class Disease(
-        @Id @GeneratedValue(strategy = GenerationType.SEQUENCE) val problemId: Long = 0,
+        @Id @GeneratedValue(strategy = GenerationType.AUTO) val problemId: Long = 0,
         val diseaseName: String ,
         val status: Int = 0,
         val admissionId: Long = -1,
